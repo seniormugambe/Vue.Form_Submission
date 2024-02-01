@@ -147,7 +147,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #21aa28;
   font-size: large;
-  font-weight: 100;
+  font-weight: bold;
 }
 
 .label {
