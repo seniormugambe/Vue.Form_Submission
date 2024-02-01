@@ -1,6 +1,6 @@
 <template>
     
-      <form @submit.prevent="submitForm">
+      <form @submit.prevent="submitForm" class="form-container">
         <!-- form fields here -->
         <label for="full_name">Full Name:</label>
         <input v-model="formData.full_name" type="text" id="full_name" />
@@ -30,24 +30,64 @@
       </div>
 
       <label for="role">Role:</label>
-        <input v-model="formData.role" type="text" id="role" />
-      
-
+      <select  v-model="formData.role" id="role" name="role">
+          <option value="admin">Admin</option>
+      <option value="finance">Finance</option>
+      <option value="healthcare">Healthcare</option>
+        <option value="tech">Tech(I.T)</option>
+    </select>
       <div>
-        <label for="roles">Roles:</label>
-        <input v-model="formData.roles" type="text" id="roles" />
+        <label for="roles" class="label">Roles:</label>
+        
+        <select v-model="roles" id="roles" name="roles" multiple class="select-container">
+      <option value="view_customers">Can view customers</option>
+      <option value="write_customers">Can write customers</option>
+
+      
+      
+      <option value="view_nurses">Can view nurses</option>
+      <option value="write_nurses">Can write nurses</option>
+
+      
+      
+      <option value="view_jobs">Can view jobs</option>
+      <option value="write_jobs">Can write jobs</option>
+      
+    </select>
       </div>
 
       <div>
-        <label for="sex">Sex:</label>
-        <input v-model="formData.sex" type="text" id="sex" />
+       <!---- /*<label for="sex">Sex:</label>
+        <input v-model="formData.sex" type="text" id="sex" />-->
+
+
+
+        <label> <input type="radio" v-model="sex" value="male" name="gender" />Male</label>
+
+    <label>
+      <input
+        type="radio" v-model="sex" value="female" name="gender" />
+      Female
+    </label>
+
+    <label>
+      <input type="radio" v-model="sex" value="other" name="gender"/>Other
+    </label>
+
+
+
       </div>
 
       <div>
         <label for="status">Status:</label>
-        <input v-model="formData.status" type="text" id="status" />
+<select  v-model="status" id="status" name="status">
+          <option value="active">Active</option>
+      <option value="disabled">Disabled</option>
+      <option value="suspended">Suspended</option>
+      
+  </select>
       </div>
-        <button type="submit">Submit</button>
+        <button type="submit" class="submit-button">Submit</button>
       </form>
     
   </template>
@@ -78,7 +118,7 @@
           const headers = {
             'Content-Type': 'application/json',
             'User-Agent': 'insomnia/8.4.2',
-            'admin_harsh':'d98926a4-b0a2-45d3-b764-589a270c7223'
+           
           };
   
           const response = await axios.post('https://staging-api.teheca.com/api/v1/auth/register', this.formData, {
@@ -95,3 +135,47 @@
   </script>
 
 	
+<style scoped>
+
+
+.form-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #21aa28;
+  font-size: large;
+  font-weight: 100;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.select-box {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  background-color: #1e06a7;
+}
+
+
+</style>
