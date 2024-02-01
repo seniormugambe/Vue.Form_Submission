@@ -1,0 +1,15 @@
+{
+	"active": "true",
+	"email": "app@teheca.com",
+	"full_name": "Ruyonga Daniel",
+	"partner_id": "513ca36f-fec2-44d7-b9ca-3470243027cd",
+	"password": "!Danny123#",
+	"phone_number": "+256705720751",
+	"role": "developer",
+	"roles": [
+		"admin"
+	],
+	"sex": "male",
+	"status": "active",
+	"username":"ruyonga"
+} 

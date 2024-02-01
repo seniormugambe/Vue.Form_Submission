@@ -1,0 +1,23 @@
+{
+  "name": "vuuetile",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vee-validate/zod": "^4.12.4",
+    "axios": "^1.6.5",
+    "json-server": "^1.0.0-alpha.23",
+    "vee-validate": "^4.12.4",
+    "vue": "^3.3.11",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "vite": "^5.0.10"
+  }
+}
