@@ -110,6 +110,9 @@
           sex:"",
           status:""
         },
+
+       
+
       };
     },
     methods: {
@@ -118,7 +121,7 @@
           const headers = {
             'Content-Type': 'application/json',
             'User-Agent': 'insomnia/8.4.2',
-           
+            header: process.env.VUE_APP_HEADER
           };
   
           const response = await axios.post('https://staging-api.teheca.com/api/v1/auth/register', this.formData, {
